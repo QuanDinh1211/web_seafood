@@ -1,0 +1,172 @@
+@import './mixin.scss';
+
+.header-container {
+    width: 100%;
+    height: 6rem;
+    position: fixed;
+    z-index: 1000;
+    .header-content-login {
+        width: 100%;
+        height: 34%;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #fff;
+        .header-login-register {
+            width: 16%;
+            height: 100%;
+            @include boxCenter(); 
+
+            .header-register {
+                @include boxCenter();
+                a {
+                    text-decoration: none;
+                    color: #000;
+
+                    &:hover {
+                        color: #fa7f50;
+                    }
+                }
+            }
+
+            .header-login {
+                @include boxCenter();
+                a {
+                    text-decoration: none;
+                    color: #000;
+
+                    &:hover {
+                        color: #fa7f50;
+                    }
+                }
+            }
+
+            .header-content-login-dot {
+                width: 1rem;
+                height: 100%;
+                @include boxCenter();
+                span {
+                    margin-bottom: 30%;
+                    font-weight: 900;
+                }
+            }
+        }
+
+        .header-profile {
+            width: 10%;
+            height: 100%;
+            @include boxCenter();
+            .header-profile-name {
+                @include boxCenter();
+
+                span {
+                    cursor: pointer;
+                }
+            }
+
+            .header-profile-logout {
+                i {
+                    cursor: pointer;
+                }
+            }
+
+            .header-profile-dot {
+                width: 1rem;
+                height: 100%;
+                @include boxCenter();
+                span {
+                    margin-bottom: 30%;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+
+    .header-content-box {
+        width: 100%;
+        height: 66%;
+        display: flex;
+        align-items: center;
+        background-color: #fff688;
+        justify-content: space-between;
+        .header-content-box-logo {
+            margin: 0 1rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: #fff;
+            a {
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .header-content-box-search {
+            width: 50%;
+            height: 70%;
+            @include boxCenter();
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 3px;
+            border-radius: 3px;
+            .header-content-box-search-input {
+                flex: 1;
+                height:100%;
+                @include boxCenter();
+                input {
+                    width: 98%;
+                    height: 80%;
+                    outline: none;
+                    border: none;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .header-content-box-search-icon {
+                width: 4rem;
+                height: 100%;
+                @include boxCenter();
+                border-radius: 3px;
+                background-color: #fff688;
+                cursor: pointer;
+
+                i {
+                    font-size: 1.4rem;
+                    // color: #34bf00;
+                }
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .header-content-box-cart {
+            width: 4rem;
+            height: 100%;
+            @include boxCenter();
+            background-color: #34bf00;
+            position: relative;
+
+            i {
+                font-size: 1.4rem;
+                color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.9;
+                } 
+            }
+
+            span {
+                position: absolute;
+                font-size: 1.2rem;
+                top: 0;
+                right: 0.4rem;
+                color: #fff;
+            }
+        }
+    }
+}

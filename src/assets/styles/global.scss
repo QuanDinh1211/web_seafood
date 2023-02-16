@@ -1,0 +1,67 @@
+@import 'mixin.scss';
+
+html {
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+
+.mt-30 {
+    margin-top: 3rem;
+}
+
+.mt-10 {
+    margin-top: 1rem;
+}
+
+.pdt-90 {
+    padding-top: 9rem;
+}
+
+.pdl-30 {
+    padding-left: 3rem;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.modal-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(2, 2, 2, 0.352);
+    @include boxCenter();
+}
+
+.error-message {
+    color: #bf1650;
+    font-size: 1.4rem;
+}
+
+textarea {
+    font-family: inherit;
+}
+
+.export-file {
+    a {
+        margin-top: 10px;
+        font-size: 1.8rem;
+        color: #338DC9;
+        font-weight: 500;
+    }
+}
+
+.dis-none {
+    display: none !important;
+}

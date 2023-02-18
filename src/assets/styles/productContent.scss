@@ -1,0 +1,8 @@
+@import './mixin.scss';
+
+.productContent-container {
+    width: 100%;
+    height: 20rem;
+    @include boxCenter();
+    margin-bottom: 20px;
+}

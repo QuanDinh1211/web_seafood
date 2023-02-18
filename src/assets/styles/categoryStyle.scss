@@ -2,12 +2,11 @@
 
 .category-container {
     width: 100%;
-    border-bottom: 10px solid #f5f3ee;
+    margin-bottom: 20px;
     .category-wrapper {
         width: 100%;
         display: flex;
         flex-direction: column;
-        @include pd(10%);
         .category-header {
             width: 100%;
             height: 5rem;
@@ -25,6 +24,7 @@
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: space-between;
             }
         }
     }

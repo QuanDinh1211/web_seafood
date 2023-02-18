@@ -1,0 +1,51 @@
+@import './mixin.scss';
+
+.list-category-navigate-container {
+    width: 100%;
+    @include boxCenter();
+
+    .list-category-navigate-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .list-category-navigate-item {
+            width: 100%;
+            height: 2.6rem;
+            display: flex;
+            align-items: center;
+            background-color: #f2f2f2;
+            text-decoration: none;
+            cursor: pointer;
+            .list-category-navigate-icon {
+                width: 25%;
+                height: 100%;
+                @include boxCenter();
+
+                .list-category-navigate-icon-img {
+                    width: 2rem;
+                    height: 2rem;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .list-category-navigate-text {
+                width: 75%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                span {
+                    color: #000;
+                }
+            }
+
+            &:hover {
+                background-color: #fff8a5;
+            }
+        }
+    }
+}

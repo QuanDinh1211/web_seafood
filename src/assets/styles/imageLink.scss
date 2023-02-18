@@ -1,0 +1,12 @@
+@import './mixin.scss';
+
+.img-link {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    @include boxCenter();
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -3,10 +3,11 @@
 .home-container {
     width: 100%;
     min-height: 100vh;
-    padding-top: 6rem;
+    padding-top: 9.4rem;
+    @include boxCenter();
 
     .home-content-wrapper {
-        width: 100%;
+        width: 80%;
         height: 100%;
     }
 }

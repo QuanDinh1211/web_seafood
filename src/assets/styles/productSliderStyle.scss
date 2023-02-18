@@ -1,0 +1,13 @@
+@import './mixin.scss';
+
+.product-slider-container {
+    width: 100%;
+    @include boxCenter();
+    .product-slider-wrapper {
+        width: 100%;
+        height: 10rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

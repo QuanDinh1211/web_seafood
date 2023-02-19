@@ -5,7 +5,7 @@ import "../../../assets/styles/productStyle.scss";
 
 import { fofmat } from "../../../utils/formatVND";
 
-const ProductItem = ({ data }) => {
+const ProductItem = ({ data, isSlide }) => {
   const handlickAddCartBtn = (event) => {
     event.preventDefault();
   };
@@ -33,7 +33,14 @@ const ProductItem = ({ data }) => {
           <span>{weight}</span>
         </div>
       </div>
-      <div className="category-item-btn-addCart" onClick={handlickAddCartBtn}>
+      <div
+        className={
+          isSlide
+            ? "category-item-btn-addCart slider-product-item"
+            : "category-item-btn-addCart"
+        }
+        onClick={handlickAddCartBtn}
+      >
         <span>ĐẶT VÀO GIỎ</span>
       </div>
     </Link>

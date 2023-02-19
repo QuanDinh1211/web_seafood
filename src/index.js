@@ -7,15 +7,19 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 
+import RootContentProvider from "./app/context/rootContext";
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
+      <RootContentProvider>
+        <Router>
+          <App />
+        </Router>
+      </RootContentProvider>
     </Provider>
   </React.StrictMode>
 );

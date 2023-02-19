@@ -48,4 +48,43 @@
             }
         }
     }
+
+    @include responsive(min-destop) {
+        .list-category-navigate-wrapper {
+            .list-category-navigate-item {
+                height: 2.14rem;
+
+                .list-category-navigate-icon {
+                    .list-category-navigate-icon-img {
+                        width: 1.6rem;
+                        height: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(tablet-min) {
+        .list-category-navigate-wrapper {
+            .list-category-navigate-item {
+                height: 5rem;
+
+                .list-category-navigate-text {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    @include responsive(phone) {
+        .list-category-navigate-wrapper {
+            .list-category-navigate-item {
+                height: 5rem;
+
+                .list-category-navigate-text {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
 }

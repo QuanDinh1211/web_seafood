@@ -15,6 +15,33 @@
             align-items: center;
             background-color: #fff688;
             justify-content: space-between;
+
+            .header-content-box-menu {
+                margin: 0 4rem;
+                width: 4rem;
+                height: 4rem;
+                @include boxCenter();
+                flex-direction: column;
+                cursor: pointer;
+                display: none;
+
+                .header-content-box-menu-icon {
+                    width: 100%;
+                    height: 50%;
+                    @include boxCenter();
+                    i {
+                        font-size: 1.8rem;
+                        color: #000;
+                    }
+                }
+
+                .header-content-box-menu-text { 
+                    span {
+                        color: #000;
+                    }
+                }
+            }
+
             .header-content-box-logo {
                 margin: 0 4rem;
                 width: 3rem;
@@ -177,7 +204,7 @@
                 @include boxCenter();
                 position: relative;
                 margin: 0 4rem;
-                border: 3px solid #000;
+                border: 2px solid #000;
                 cursor: pointer;
     
                 i {
@@ -199,6 +226,56 @@
                     padding: 0.2rem 0.3rem;
                     background: red;
                     border-radius: 6px;
+                }
+            }
+        }
+
+        
+    }
+
+    @include responsive(tablet-min) {
+        .header-wrapper {
+            height: 6rem;
+            .header-content-box {
+                .header-content-box-menu {
+                    display: flex;
+                }
+                .header-content-box-logo {
+                    display: none;
+                }
+                .header-content-box-user {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include responsive(phone) {
+        .header-wrapper {
+            height: 6rem;
+            .header-content-box {
+                .header-content-box-menu {
+                    display: flex;
+                }
+                .header-content-box-logo {
+                    display: none;
+                }
+                .header-content-box-user {
+                    display: none;
+                }
+
+                .header-content-box-search {
+                    width: 50%;
+                    background-color: #fff;
+                    padding: 1.4px;
+                    
+                }
+
+                .header-content-box-cart {
+                    width: 3.4rem;
+                    height: 3.4rem; 
+                    border: 1.4px solid #000;
+
                 }
             }
         }

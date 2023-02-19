@@ -9,5 +9,23 @@
     .home-content-wrapper {
         width: 80%;
         height: 100%;
+
+        @include responsive(tablet) {
+            width: 90%;
+        }
+
+    }
+    @include responsive(tablet-min) {
+        padding-top: 6rem;
+        .home-content-wrapper {
+            width: 90%;
+        }
+    }
+
+    @include responsive(phone) {
+        padding-top: 6rem;
+        .home-content-wrapper {
+            width: 96%;
+        }
     }
 }

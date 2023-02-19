@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import "../../assets/styles/headerStyle.scss";
 import CategoryHeader from "./CategoryHeader";
 
+import { RootContext } from "../../app/hooks/rootContext";
+
 const Header = () => {
+  const { handleOpenNavigateTablet } = useContext(RootContext);
+
+  const handleOnclickMenu = () => {
+    handleOpenNavigateTablet();
+  };
+
   return (
     <div className="header-container">
       <div className="header-wrapper">
         <div className="header-content-box">
+          <div className="header-content-box-menu" onClick={handleOnclickMenu}>
+            <div className="header-content-box-menu-icon">
+              <i className="fas fa-bars"></i>
+            </div>
+            <div className="header-content-box-menu-text">
+              <span>Menu</span>
+            </div>
+          </div>
           <div className="header-content-box-logo">
             <Link to="/">
               <img src={require("../../assets/imgs/logo.jpg")} alt="" />

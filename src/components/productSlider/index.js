@@ -187,7 +187,9 @@ const ProductSlider = () => {
       <div className="product-slider-wrapper">
         <Slider {...settings}>
           {producSliderData.map((product) => {
-            return <ProductItem key={product.id} data={product} />;
+            return (
+              <ProductItem isSlide={true} key={product.id} data={product} />
+            );
           })}
         </Slider>
       </div>

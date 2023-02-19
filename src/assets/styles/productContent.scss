@@ -2,7 +2,22 @@
 
 .productContent-container {
     width: 100%;
-    height: 20rem;
+    height: 18rem;
     @include boxCenter();
     margin-bottom: 20px;
+
+    @include responsive(min-destop) {
+        height: 16rem;
+    }
+
+    @include responsive(tablet) {
+        height: 16rem;
+    }
+    @include responsive(tablet-min) {
+        height: 14rem;
+    }
+
+    @include responsive(phone) {
+        height: 12rem;
+    }
 }

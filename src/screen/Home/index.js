@@ -16,7 +16,6 @@ const Home = () => {
     <div className="home-container">
       <div className="home-content-wrapper">
         <ProductAds />
-        <ProductContent />
         {/* <ProductSlider /> */}
         {Object.keys(products).map((category, index) => {
           return (

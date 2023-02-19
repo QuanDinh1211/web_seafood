@@ -22,6 +22,10 @@
                 cursor: pointer;
                 background-color: #dcd79d;
 
+                &.tablet {
+                    display: none;
+                }
+
                 .category-header-main-item-icon {
                     width: 25%;
                     height: 100%;
@@ -102,5 +106,36 @@
                 }
             }
         }
+    }
+
+    @include responsive(tablet) {
+
+        .category-header-wrapper{
+            width: 90%;
+        }
+    }
+
+    @include responsive(tablet-min) {
+        display: none;
+        .category-header-wrapper{
+            width: 90%;
+
+            .category-header-main {
+                .category-header-main-item {
+                    display: none;
+
+                    &.tablet {
+                        display: flex;
+                        background-color: transparent;
+
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(phone) {
+        display: none;
+        
     }
 }

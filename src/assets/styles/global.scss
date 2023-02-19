@@ -3,6 +3,18 @@
 html {
     box-sizing: border-box;
     font-family: system-ui;
+
+    @include responsive(tablet) {
+        font-size: 70%;
+    }
+
+    @include responsive(tablet-min) {
+        font-size: 70%;
+    }
+    
+    @include responsive(phone) {
+        font-size: 50%;
+    }
 }
 
 
@@ -42,6 +54,7 @@ a {
     bottom: 0;
     background-color: rgba(2, 2, 2, 0.352);
     @include boxCenter();
+    z-index: 2000;
 }
 
 .error-message {

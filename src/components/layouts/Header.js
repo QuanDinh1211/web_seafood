@@ -57,10 +57,10 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <div className="header-content-box-cart">
+          <Link to="cart" className="header-content-box-cart">
             <i className="fas fa-shopping-cart "></i>
             <span>0</span>
-          </div>
+          </Link>
         </div>
       </div>
       <CategoryHeader />

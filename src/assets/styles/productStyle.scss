@@ -115,6 +115,7 @@
     }
 
     @include responsive(min-destop) {
+        width: 15.8%;
         .category-item-btn-addCart {
             // display: flex;
 
@@ -125,7 +126,7 @@
     }
 
     @include responsive(tablet-min) {
-        width: 23%;
+        width: 23.6%;
         height: 20rem;
 
         .category-item-last {
@@ -188,7 +189,7 @@
     }
 
     @include responsive(phone) {
-        width: 46%;
+        width: 47%;
         height: 24rem;
 
         .category-item-last {

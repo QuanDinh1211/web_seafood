@@ -28,4 +28,10 @@
             width: 96%;
         }
     }
+
+    @include responsive(min-destop) {
+        .home-content-wrapper {
+            width: 90%;
+        }
+    }
 }

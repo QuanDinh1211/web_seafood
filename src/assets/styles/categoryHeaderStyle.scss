@@ -138,4 +138,11 @@
         display: none;
         
     }
+
+    @include responsive(min-destop) {
+
+        .category-header-wrapper{
+            width: 90%;
+        }
+    } 
 }

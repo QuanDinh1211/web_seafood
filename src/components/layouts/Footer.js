@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import "../../assets/styles/footerStyle.scss";
 
 const Footer = () => {
@@ -7,9 +9,9 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-wrapper">
         <div className="footer-first">
-          <div className="footer-first-logo">
+          <Link to="/introduction" className="footer-first-logo">
             <img src={require("../../assets/imgs/logo.jpg")} alt="logo" />
-          </div>
+          </Link>
         </div>
         <div className="footer-last">
           <div className="footer-last-item">

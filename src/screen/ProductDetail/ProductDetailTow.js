@@ -211,7 +211,24 @@ const ProductDetailTow = () => {
             </div>
           </div>
         </div>
-        <div className="productDetailTow-des"></div>
+        <div className="productDetailTow-des relative">
+          <div className="productDetailTow-des-title">
+            <span>Mô tả sản phẩm</span>
+          </div>
+          <div className="productDetailTow-des-content mt-10">
+            <h2 className="mt-10">Tôm càng sống</h2>
+            <div className="productDetailTow-des-content-video">
+              <iframe
+                width="100%"
+                height="96%"
+                src="https://www.youtube.com/embed/XXglhQrxZLM"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="mt-10"
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -11,6 +11,25 @@ const Cart = () => {
         </div>
         <div className="cart-header">
           <div className="cart-list-product">
+            <div className="cart-product-item cart-list-product-title">
+              <div className="cart-product-item-header"></div>
+              <div className="cart-product-item-body">
+                <div className="cart-product-item-body-first">
+                  <div className="cart-product-item-first-name-adress"></div>
+                  <div className="cart-product-item-first-price">
+                    <div className="cart-product-item-price">
+                      <div className="cart-product-item-price-math">
+                        <span>Số Lượng</span>
+                      </div>
+                      <div className="cart-product-item-price-result">
+                        <span>Giá Thành</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="cart-product-item-body-last"></div>
+              </div>
+            </div>
             <div className="cart-product-item">
               <div className="cart-product-item-header">
                 <div className="cart-product-item-img">

@@ -14,7 +14,7 @@
             height: 2.6rem;
             display: flex;
             align-items: center;
-            background-color: #f2f2f2;
+            background-color: #e6e6e6;
             text-decoration: none;
             cursor: pointer;
             .list-category-navigate-icon {
@@ -27,8 +27,12 @@
                     height: 2rem;
                     overflow: hidden;
                     border-radius: 50%;
+                    @include boxCenter();
                     img {
-                        width: 100%;
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        overflow: hidden;
+                        border-radius: 50%;
                     }
                 }
             }
@@ -44,7 +48,8 @@
             }
 
             &:hover {
-                background-color: #fff8a5;
+                // background-color: #fff8a5;
+                opacity: 0.94;
             }
         }
     }

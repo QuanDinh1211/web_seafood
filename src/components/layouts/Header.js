@@ -1,12 +1,17 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "../../assets/styles/headerStyle.scss";
 import CategoryHeader from "./CategoryHeader";
 
 import { RootContext } from "../../app/hooks/rootContext";
+import { selectShop } from "../../store/selectors/homeSelector";
+import { imgurl } from "../../store/consts/rootConst";
 
 const Header = () => {
+  const shop = useSelector(selectShop);
+
   const { handleOpenNavigateTablet } = useContext(RootContext);
 
   const handleOnclickMenu = () => {
@@ -27,7 +32,7 @@ const Header = () => {
           </div>
           <div className="header-content-box-logo">
             <Link to="/">
-              <img src={require("../../assets/imgs/logo.jpg")} alt="" />
+              <img src={shop && `${imgurl}/${shop.path}`} alt="logo" />
             </Link>
           </div>
           <div className="header-content-box-search">

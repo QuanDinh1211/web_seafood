@@ -1,22 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import "../../../assets/styles/productStyle.scss";
 
-import { fofmat } from "../../../utils/formatVND";
+import { imgurldefault } from "../../../store/consts/rootConst";
+import { setProduct } from "../../../store/slice/productSlice";
 
 const ProductItem = ({ data, isSlide }) => {
+  const dispatch = useDispatch();
+
   const handlickAddCartBtn = (event) => {
     event.preventDefault();
   };
 
-  const { id, category, name, img, weight, price } = data;
+  const handleOnclickProductItem = () => {
+    dispatch(setProduct(data));
+  };
+
+  const {
+    id,
+    category_id,
+    productImage,
+    category,
+    link,
+    title,
+    price,
+    priceShow,
+  } = data;
 
   return (
-    <Link to={`${category}/${id}`} className="category-item relative">
+    <Link
+      to={link}
+      className="category-item relative"
+      onClick={handleOnclickProductItem}
+    >
       <div className="category-item-first">
         <div className="category-item-img">
-          <img src={require(`../../../assets/imgs/${img}`)} alt="img" />
+          <img src={`${imgurldefault}/${productImage[0].path}`} alt="img" />
         </div>
       </div>
       <div className="category-item-last">
@@ -24,13 +45,14 @@ const ProductItem = ({ data, isSlide }) => {
           <span>{category}</span>
         </div>
         <div className="category-item-last-name">
-          <h2>{name}</h2>
+          <h2>{title}</h2>
         </div>
         <div className="category-item-last-price">
-          <span>{fofmat(price)}</span>
+          <span>{priceShow}</span>
         </div>
         <div className="category-item-last-volum">
-          <span>{weight}</span>
+          {/* <span>{weight}</span> */}
+          <span></span>
         </div>
       </div>
       <div

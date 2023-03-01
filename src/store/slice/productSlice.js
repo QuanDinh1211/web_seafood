@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { getProduct } from "../thunkAction/productThunkAction";
+
 const initialState = {
   products: [
     {
@@ -462,10 +464,13 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     setProduct: (state, action) => {
-      state.product = state.products.find((product) => {
-        return Number(product.id) === Number(action.payload);
-      });
+      state.product = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getProduct.fulfilled, (state, action) => {
+      state.product = action.payload;
+    });
   },
 });
 

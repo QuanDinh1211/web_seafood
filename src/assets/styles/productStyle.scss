@@ -19,11 +19,11 @@
             @include boxCenter();
             transition: 300ms ease;
             img {
-                width: 100%;
+                width: 80%;
             }
 
             &:hover {
-                transform: scale(1.2);
+                transform: scale(1.1);
             }
         }
     }

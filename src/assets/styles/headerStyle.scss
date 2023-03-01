@@ -44,13 +44,13 @@
 
             .header-content-box-logo {
                 margin: 0 4rem;
-                width: 3rem;
+                width: 4rem;
                 height: 3rem;
-                background-color: #fff;
                 a {
                     width: 100%;
                     height: 100%;
                     text-decoration: none;
+                    @include boxCenter();
                     img {
                         width: 100%;
                     }

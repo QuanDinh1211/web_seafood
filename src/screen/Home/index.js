@@ -1,23 +1,60 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import "../../assets/styles/homeStyle.scss";
 import Category from "../../components/category";
 import ProductAds from "../../components/ProductAds";
 import ProductContent from "../../components/productContent";
-import ProductSlider from "../../components/productSlider";
+import Topic from "../../components/Topic";
 
-import { productSelector } from "../../store/selectors/productSelector";
+import {
+  getHome,
+  getProductsCategory,
+} from "../../store/thunkAction/homeThunkAction";
+import {
+  selectCategory,
+  listProductsSelector,
+} from "../../store/selectors/homeSelector";
 
 const Home = () => {
-  const products = useSelector(productSelector);
+  const dispatch = useDispatch();
+  const listCategory = useSelector(selectCategory);
+  const listProductsCategoryData = useSelector(listProductsSelector);
+
+  useEffect(() => {
+    dispatch(getHome());
+  }, []);
+
+  useEffect(() => {
+    if (Object.values(listCategory).length > 0) {
+      Object.values(listCategory).map((category) => {
+        dispatch(getProductsCategory(category));
+      });
+    }
+  }, [listCategory]);
 
   return (
     <div className="home-container">
       <div className="home-content-wrapper">
         <ProductAds />
+        <Topic />
+        {listProductsCategoryData.map((category_product, index) => {
+          return (
+            category_product && (
+              <>
+                <ProductContent />
+                <Category
+                  key={index}
+                  categoryname={category_product.category.name}
+                  dataProductcategory={category_product.products}
+                />
+              </>
+            )
+          );
+        })}
+
         {/* <ProductSlider /> */}
-        {Object.keys(products).map((category, index) => {
+        {/* {Object.keys(products).map((category, index) => {
           return (
             <>
               <Category
@@ -28,7 +65,7 @@ const Home = () => {
               <ProductContent />
             </>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

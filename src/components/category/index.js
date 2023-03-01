@@ -13,7 +13,7 @@ const Category = ({ categoryname, dataProductcategory }) => {
         </div>
         <div className="category-body">
           <div className="category-list-item">
-            {dataProductcategory.map((product) => {
+            {Object.values(dataProductcategory).map((product) => {
               return <ProductItem key={product.id} data={product} />;
             })}
           </div>

@@ -14,7 +14,7 @@ const RootRouter = () => {
         <Route exact path="/" element={<Home />} />
         <Route
           exact
-          path="/:category/:producid"
+          path="/:category/:productid"
           element={<ProductDetailTow />}
         />
         <Route exact path="/cart" element={<Cart />} />

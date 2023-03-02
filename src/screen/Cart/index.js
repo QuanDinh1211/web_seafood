@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import "../../assets/styles/cartStyle.scss";
+import {
+  selectProductCart,
+  sumPriceProductCartSelector,
+} from "../../store/selectors/cartSelector";
+import { RootContext } from "../../app/hooks/rootContext";
+
+import ProductCart from "../../components/cart/ProductCart";
 
 const Cart = () => {
+  const dataProduct = useSelector(selectProductCart);
+  const sumPrice = useSelector(sumPriceProductCartSelector);
+
+  useEffect(() => window.scrollTo(0, 0), []);
+
+  const { handleBuyCart } = useContext(RootContext);
+
+  const handleOnclickBuyCart = async () => {
+    if (dataProduct.length > 0) {
+      const result = await handleBuyCart(sumPrice);
+      if (result.success) {
+        window.open(result.link, "_blank");
+      }
+    }
+  };
+
   return (
     <div className="cart-container">
       <div className="cart-wrapper">
@@ -30,144 +54,9 @@ const Cart = () => {
                 <div className="cart-product-item-body-last"></div>
               </div>
             </div>
-            <div className="cart-product-item">
-              <div className="cart-product-item-header">
-                <div className="cart-product-item-img">
-                  <img
-                    src="https://choppvn-catalogs.s3.ap-southeast-1.amazonaws.com/products/rec88A1drQ32RcVtG/38-HA-LONG-OYSTER-2-thumbnail%402x.jpg"
-                    alt="img"
-                  />
-                </div>
-              </div>
-              <div className="cart-product-item-body">
-                <div className="cart-product-item-body-first">
-                  <div className="cart-product-item-first-name-adress">
-                    <div className="cart-product-item-name">
-                      <h2>Hàu Sữa Giống Nhật - Việt Nam</h2>
-                    </div>
-                    <div className="cart-product-item-adress">
-                      <span>Local — Vietnam</span>
-                    </div>
-                  </div>
-                  <div className="cart-product-item-first-price">
-                    <div className="cart-product-item-price">
-                      <div className="cart-product-item-price-math">
-                        <span>120.000đ</span>
-                        <span>x</span>
-                        <span>4 gói</span>
-                      </div>
-                      <div className="cart-product-item-price-result">
-                        <span>=</span>
-                        <span>480.000đ</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="cart-product-item-body-last">
-                  <div className="cart-product-item-btn-delete">
-                    <span>Bỏ Ra</span>
-                  </div>
-                  <div className="cart-product-item-btn-action">
-                    <span className="cart-product-item-btn-action-mins">
-                      -1
-                    </span>
-                    <span className="cart-product-item-btn-action-inc">+1</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="cart-product-item">
-              <div className="cart-product-item-header">
-                <div className="cart-product-item-img">
-                  <img
-                    src="https://choppvn-catalogs.s3.ap-southeast-1.amazonaws.com/products/rec88A1drQ32RcVtG/38-HA-LONG-OYSTER-2-thumbnail%402x.jpg"
-                    alt="img"
-                  />
-                </div>
-              </div>
-              <div className="cart-product-item-body">
-                <div className="cart-product-item-body-first">
-                  <div className="cart-product-item-first-name-adress">
-                    <div className="cart-product-item-name">
-                      <h2>Hàu Sữa Giống Nhật - Việt Nam</h2>
-                    </div>
-                    <div className="cart-product-item-adress">
-                      <span>Local — Vietnam</span>
-                    </div>
-                  </div>
-                  <div className="cart-product-item-first-price">
-                    <div className="cart-product-item-price">
-                      <div className="cart-product-item-price-math">
-                        <span>120.000đ</span>
-                        <span>x</span>
-                        <span>4 gói</span>
-                      </div>
-                      <div className="cart-product-item-price-result">
-                        <span>=</span>
-                        <span>480.000đ</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="cart-product-item-body-last">
-                  <div className="cart-product-item-btn-delete">
-                    <span>Bỏ Ra</span>
-                  </div>
-                  <div className="cart-product-item-btn-action">
-                    <span className="cart-product-item-btn-action-mins">
-                      -1
-                    </span>
-                    <span className="cart-product-item-btn-action-inc">+1</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="cart-product-item">
-              <div className="cart-product-item-header">
-                <div className="cart-product-item-img">
-                  <img
-                    src="https://choppvn-catalogs.s3.ap-southeast-1.amazonaws.com/products/rec88A1drQ32RcVtG/38-HA-LONG-OYSTER-2-thumbnail%402x.jpg"
-                    alt="img"
-                  />
-                </div>
-              </div>
-              <div className="cart-product-item-body">
-                <div className="cart-product-item-body-first">
-                  <div className="cart-product-item-first-name-adress">
-                    <div className="cart-product-item-name">
-                      <h2>Hàu Sữa Giống Nhật - Việt Nam</h2>
-                    </div>
-                    <div className="cart-product-item-adress">
-                      <span>Local — Vietnam</span>
-                    </div>
-                  </div>
-                  <div className="cart-product-item-first-price">
-                    <div className="cart-product-item-price">
-                      <div className="cart-product-item-price-math">
-                        <span>120.000đ</span>
-                        <span>x</span>
-                        <span>4 gói</span>
-                      </div>
-                      <div className="cart-product-item-price-result">
-                        <span>=</span>
-                        <span>480.000đ</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="cart-product-item-body-last">
-                  <div className="cart-product-item-btn-delete">
-                    <span>Bỏ Ra</span>
-                  </div>
-                  <div className="cart-product-item-btn-action">
-                    <span className="cart-product-item-btn-action-mins">
-                      -1
-                    </span>
-                    <span className="cart-product-item-btn-action-inc">+1</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {dataProduct.map((product) => {
+              return <ProductCart product={product} key={product.id} />;
+            })}
           </div>
         </div>
         <div className="cart-body">
@@ -177,7 +66,7 @@ const Cart = () => {
                 <span>Tiền Hàng</span>
               </div>
               <div className="cart-body-item-text">
-                <span>522.000đ</span>
+                <span>{sumPrice}</span>
               </div>
             </div>
             <div className="cart-body-item">
@@ -185,7 +74,7 @@ const Cart = () => {
                 <span>Phí Mua Hộ</span>
               </div>
               <div className="cart-body-item-text">
-                <span>60.000đ</span>
+                <span>0 đ</span>
               </div>
             </div>
             <div className="cart-body-item cash">
@@ -202,12 +91,12 @@ const Cart = () => {
               <span>TỔNG CỘNG</span>
             </div>
             <div className="cart-body-sum-price-item">
-              <span>582.000đ</span>
+              <span>{sumPrice}</span>
             </div>
           </div>
         </div>
         <div className="cart-footer">
-          <div className="cart-footer-buy">
+          <div className="cart-footer-buy" onClick={handleOnclickBuyCart}>
             <span>Thanh Toán</span>
           </div>
         </div>

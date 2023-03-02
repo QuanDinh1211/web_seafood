@@ -1,6 +1,7 @@
 @import './mixin.scss';
 
 .footer-container {
+    padding-top: 2rem;
     width: 100%;
     height: 12rem;
     @include boxCenter();
@@ -16,13 +17,11 @@
             height: 50%;
             @include boxCenter();
             .footer-first-logo {
-                width: 5rem;
-                height: 5rem;
-                border-radius: 50%;
-                overflow: hidden;
+                 
                 @include boxCenter();
-                img {
-                    width: 100%;
+                img { 
+                    width: 5rem;
+                    height: 5rem;
                 } 
             }
         }

@@ -468,6 +468,19 @@
                     font-size: 1.2rem;
                 }
             }
+
+            .productDetailTow-des-content {
+                width: 100%;
+                @include boxCenter();
+                flex-direction: column;
+                .productDetailTow-des-item {
+                    width: 90%;
+
+                    p {
+                        line-height: 1.6rem;
+                    }
+                }
+            }
         }
     }
 

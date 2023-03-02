@@ -86,8 +86,14 @@
                         border-radius: 50%;
                         overflow: hidden;
                         background-color: #fff;
+                        @include boxCenter();
                         img {
                             width: 100%;
+                        }
+
+                        i {
+                            font-size:1.6rem;
+                            color: #fdaf41;
                         }
                     }
                 }

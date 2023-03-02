@@ -8,9 +8,11 @@ import CategoryHeader from "./CategoryHeader";
 import { RootContext } from "../../app/hooks/rootContext";
 import { selectShop } from "../../store/selectors/homeSelector";
 import { imgurl } from "../../store/consts/rootConst";
+import { selectProductCart } from "../../store/selectors/cartSelector";
 
 const Header = () => {
   const shop = useSelector(selectShop);
+  const dataProduct = useSelector(selectProductCart);
 
   const { handleOpenNavigateTablet } = useContext(RootContext);
 
@@ -31,9 +33,11 @@ const Header = () => {
             </div>
           </div>
           <div className="header-content-box-logo">
-            <Link to="/">
-              <img src={shop && `${imgurl}/${shop.path}`} alt="logo" />
-            </Link>
+            {shop && (
+              <Link to="/">
+                <img src={shop && `${imgurl}/${shop.path}`} alt="logo" />
+              </Link>
+            )}
           </div>
           <div className="header-content-box-search">
             <div className="header-content-box-search-input">
@@ -43,28 +47,33 @@ const Header = () => {
               <i className="fas fa-search"></i>
             </div>
           </div>
-          <div className="header-content-box-user">
-            <div className="header-content-box-user-icon">
-              <i className="fas fa-user"></i>
+          {false && (
+            <div className="header-content-box-user">
+              <div className="header-content-box-user-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="header-content-box-user-name">
+                <span className="header-content-box-user-text-name">
+                  Đăng nhập
+                </span>
+                <span>Tài khoản</span>
+              </div>
+              <div className="header-content-box-user-hover">
+                <a href="login" className="header-content-box-user-hover-item">
+                  <span>Đăng nhập</span>
+                </a>
+                <a
+                  href="register"
+                  className="header-content-box-user-hover-item"
+                >
+                  <span>Đăng ký</span>
+                </a>
+              </div>
             </div>
-            <div className="header-content-box-user-name">
-              <span className="header-content-box-user-text-name">
-                Đăng nhập
-              </span>
-              <span>Tài khoản</span>
-            </div>
-            <div className="header-content-box-user-hover">
-              <a href="login" className="header-content-box-user-hover-item">
-                <span>Đăng nhập</span>
-              </a>
-              <a href="register" className="header-content-box-user-hover-item">
-                <span>Đăng ký</span>
-              </a>
-            </div>
-          </div>
+          )}
           <Link to="cart" className="header-content-box-cart">
             <i className="fas fa-shopping-cart "></i>
-            <span>0</span>
+            <span>{dataProduct.length}</span>
           </Link>
         </div>
       </div>

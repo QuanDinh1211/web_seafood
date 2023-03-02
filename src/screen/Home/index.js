@@ -7,10 +7,7 @@ import ProductAds from "../../components/ProductAds";
 import ProductContent from "../../components/productContent";
 import Topic from "../../components/Topic";
 
-import {
-  getHome,
-  getProductsCategory,
-} from "../../store/thunkAction/homeThunkAction";
+import { getProductsCategory } from "../../store/thunkAction/homeThunkAction";
 import {
   selectCategory,
   listProductsSelector,
@@ -20,10 +17,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const listCategory = useSelector(selectCategory);
   const listProductsCategoryData = useSelector(listProductsSelector);
-
-  useEffect(() => {
-    dispatch(getHome());
-  }, []);
 
   useEffect(() => {
     if (Object.values(listCategory).length > 0) {

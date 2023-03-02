@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import "../../assets/styles/productDetailTowStyle.scss";
 
 import { getProduct } from "../../store/thunkAction/productThunkAction";
-import { getHome } from "../../store/thunkAction/homeThunkAction";
 import { selectProduct } from "../../store/selectors/productSelector";
 import { imgurldefault } from "../../store/consts/rootConst";
+import { RootContext } from "../../app/hooks/rootContext";
 
 const ProductDetailTow = () => {
   const { productid } = useParams();
   const dispatch = useDispatch();
 
+  const { handleAddToCart } = useContext(RootContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(getHome());
     if (!product) {
       dispatch(getProduct(productid));
     }
@@ -46,6 +47,10 @@ const ProductDetailTow = () => {
   };
 
   const { img_active, volumeProduc } = productState;
+
+  const handlickAddCartBtn = () => {
+    handleAddToCart(dispatch, { product: product, quantity: volumeProduc });
+  };
 
   return (
     <div className="productDetailTow-container">
@@ -105,58 +110,21 @@ const ProductDetailTow = () => {
               <div className="productDetailTow-content-option-des">
                 <div className="productDetailTow-content-option-des-list-item">
                   <div className="productDetailTow-content-option-des-item">
-                    <span>{product.desc}</span>
+                    <div className="productDetailTow-content-option-des-item-title">
+                      <span>Loại sản phẩm:</span>
+                    </div>
+                    <div className="productDetailTow-content-option-des-item-text">
+                      <span>{product.categoryName}</span>
+                    </div>
                   </div>
-                  {false && (
-                    <>
-                      <div className="productDetailTow-content-option-des-item">
-                        <div className="productDetailTow-content-option-des-item-title">
-                          <span>Quy cách:</span>
-                        </div>
-                        <div className="productDetailTow-content-option-des-item-text">
-                          <span>Đóng khay 500g, hút chân không</span>
-                        </div>
-                      </div>
-                      <div className="productDetailTow-content-option-des-item">
-                        <div className="productDetailTow-content-option-des-item-title">
-                          <span>Tình trạng:</span>
-                        </div>
-                        <div className="productDetailTow-content-option-des-item-text">
-                          <span>Đông lạnh</span>
-                        </div>
-                      </div>
-                      <div className="productDetailTow-content-option-des-item">
-                        <div className="productDetailTow-content-option-des-item-title">
-                          <span>Xuất xứ:</span>
-                        </div>
-                        <div className="productDetailTow-content-option-des-item-text">
-                          <span>Nhập khẩu từ Nauy</span>
-                        </div>
-                      </div>
-                      <div className="productDetailTow-content-option-des-item">
-                        <div className="productDetailTow-content-option-des-item-title">
-                          <span>HSD, bảo quản:</span>
-                        </div>
-                        <div className="productDetailTow-content-option-des-item-text">
-                          <span>
-                            12 tháng kể từ NSX, bảo quản nhiệt độ tốt nhất từ
-                            -18 độ C -
-                          </span>
-                        </div>
-                      </div>
-                      <div className="productDetailTow-content-option-des-item">
-                        <div className="productDetailTow-content-option-des-item-title">
-                          <span>Món ngon :</span>
-                        </div>
-                        <div className="productDetailTow-content-option-des-item-text">
-                          <span>
-                            nướng, chiên giòn sốt me, kho tiêu, tẩm bột chiên
-                            xù...
-                          </span>
-                        </div>
-                      </div>
-                    </>
-                  )}
+                  <div className="productDetailTow-content-option-des-item">
+                    <div className="productDetailTow-content-option-des-item-title">
+                      <span>Còn lại:</span>
+                    </div>
+                    <div className="productDetailTow-content-option-des-item-text">
+                      <span>{product.stock} sản phẩm</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="productDetailTow-content-order-value">
@@ -205,7 +173,10 @@ const ProductDetailTow = () => {
                 </div>
               </div>
               <div className="productDetailTow-content-order-add-toCart">
-                <div className="productDetailTow-content-order-btn-addcart">
+                <div
+                  className="productDetailTow-content-order-btn-addcart"
+                  onClick={handlickAddCartBtn}
+                >
                   <span>Đặt vào giỏ</span>
                 </div>
               </div>
@@ -292,17 +263,22 @@ const ProductDetailTow = () => {
               <span>Mô tả sản phẩm</span>
             </div>
             <div className="productDetailTow-des-content mt-10">
-              <h2 className="mt-10">Tôm càng sống</h2>
-              <div className="productDetailTow-des-content-video">
-                <iframe
-                  width="100%"
-                  height="96%"
-                  src="https://www.youtube.com/embed/XXglhQrxZLM"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  className="mt-10"
-                ></iframe>
+              <h2 className="mt-10">{product.title}</h2>
+              <div className="productDetailTow-des-item mt-10">
+                <p>{product.desc}</p>
               </div>
+              {false && (
+                <div className="productDetailTow-des-content-video">
+                  <iframe
+                    width="100%"
+                    height="96%"
+                    src="https://www.youtube.com/embed/XXglhQrxZLM"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    className="mt-10"
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
         </div>

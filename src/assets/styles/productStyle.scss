@@ -3,7 +3,7 @@
 .category-item {
     text-decoration: none;
     width: 16%;
-    height: 16rem;
+    height: 18rem;
     border: 1px solid #f5f3ee;
     padding: 0.6rem;
     overflow: hidden;
@@ -38,6 +38,7 @@
             align-items: center;
             span {
                 color: #666;
+
             }
         }
 
@@ -129,6 +130,10 @@
         width: 23.6%;
         height: 20rem;
 
+        .category-item-btn-addCart {
+            display: flex !important;
+        }
+
         .category-item-last {
             .category-item-last-catename {
                 
@@ -190,28 +195,31 @@
 
     @include responsive(phone) {
         width: 47%;
-        height: 24rem;
+        height: 30rem;
+        
+
+       
 
         .category-item-last {
             .category-item-last-catename {
                 
                 span {
-                    font-size: 1.5rem;
+                    font-size: 1.8rem;
                 }
             }
     
             .category-item-last-name {
              
                 h2 {
-                    font-size: 1.6rem;
-                    line-height: 2rem;
+                    font-size: 2rem;
+                    line-height: 2.6rem;
                 }
             }
     
             .category-item-last-price {
                
                 span {
-                    font-size: 1.4rem;
+                    font-size: 2rem;
                    
                 }
             }
@@ -223,19 +231,22 @@
                 }
             }
         }
+
+        
     
         .category-item-btn-addCart {
+            display: flex !important;
             position: absolute;
             bottom: 0.4rem ;
             right: 0.4rem ;
             width: 54%;
-            height: 1.8rem;
+            height: 2.4rem;
             @include boxCenter();
             background-color: #34bf00;
-            border-radius: 1rem;
+            border-radius: 2rem;
             display: none;
             span {
-                font-size: 0.9rem;
+                font-size: 1.2rem;
             }
     
             &:hover {

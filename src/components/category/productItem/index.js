@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -6,12 +6,15 @@ import "../../../assets/styles/productStyle.scss";
 
 import { imgurldefault } from "../../../store/consts/rootConst";
 import { setProduct } from "../../../store/slice/productSlice";
+import { RootContext } from "../../../app/hooks/rootContext";
 
 const ProductItem = ({ data, isSlide }) => {
   const dispatch = useDispatch();
+  const { handleAddToCart } = useContext(RootContext);
 
   const handlickAddCartBtn = (event) => {
     event.preventDefault();
+    handleAddToCart(dispatch, { product: data, quantity: 1 });
   };
 
   const handleOnclickProductItem = () => {
@@ -22,7 +25,7 @@ const ProductItem = ({ data, isSlide }) => {
     id,
     category_id,
     productImage,
-    category,
+    categoryName,
     link,
     title,
     price,
@@ -42,7 +45,7 @@ const ProductItem = ({ data, isSlide }) => {
       </div>
       <div className="category-item-last">
         <div className="category-item-last-catename">
-          <span>{category}</span>
+          <span>{categoryName}</span>
         </div>
         <div className="category-item-last-name">
           <h2>{title}</h2>

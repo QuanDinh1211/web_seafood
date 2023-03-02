@@ -4,7 +4,8 @@
     width: 100%;
     min-height: 100vh;
     padding-top: 9.4rem;
-    @include boxCenter();
+    display: flex;
+    justify-content: center;
 
     .home-content-wrapper {
         width: 80%;
@@ -16,14 +17,14 @@
 
     }
     @include responsive(tablet-min) {
-        padding-top: 6rem;
+        padding-top: 6.2rem;
         .home-content-wrapper {
             width: 90%;
         }
     }
 
     @include responsive(phone) {
-        padding-top: 6rem;
+        padding-top: 8.2rem;
         .home-content-wrapper {
             width: 96%;
         }

@@ -20,26 +20,16 @@ export const categorySelector = createSelector(
   }
 );
 
-export const topicSelector = createSelector(
-  selectTopic,
-  categorySelector,
-  (topic, listCategory) => {
-    const dataTopicRender = Object.values(topic).map((product) => {
-      const category = Object.values(listCategory).find((category) => {
-        return Number(category.id) === Number(product.category_id);
-      });
+export const topicSelector = createSelector(selectTopic, (topic) => {
+  const dataTopicRender = Object.values(topic).map((product) => {
+    return {
+      ...product,
+      link: `${formatLink(product.categoryName)}/${product.id}`,
+    };
+  });
 
-      return {
-        ...product,
-        category: category.name,
-        title: product.title,
-        link: `${formatLink(category.slug)}/${product.id}`,
-      };
-    });
-
-    return dataTopicRender;
-  }
-);
+  return dataTopicRender;
+});
 
 export const listProductsSelector = createSelector(
   selectListProductsCategory,
@@ -58,13 +48,13 @@ export const listProductsSelector = createSelector(
             products: products.map((product) => {
               return {
                 ...product,
-                category: category.name,
-                title: product.title,
-                link: `${formatLink(category.name)}/${product.id}`,
+                link: `${formatLink(product.categoryName)}/${product.id}`,
               };
             }),
           };
         }
+
+        return null;
       }
     );
 

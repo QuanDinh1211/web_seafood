@@ -16,7 +16,7 @@ const ListCategoryNavigate = () => {
         {listCategory.map((category, index) => {
           return (
             <Link
-              to={`category/${category.slug}`}
+              to={`category/${category.slug}/${category.id}`}
               key={index}
               className="list-category-navigate-item"
             >

@@ -92,7 +92,7 @@
     }
 
     @include responsive(tablet-min) {
-        padding-top: 8rem;
+        padding-top: 12.6rem;
         min-height: 90vh;
         .introduction-wrapper {
             width: 100%;
@@ -103,5 +103,9 @@
                 }
             }
         }
+    }
+
+    @include responsive(phone) {
+        padding-top: 16rem;
     }
 }

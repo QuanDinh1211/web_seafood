@@ -12,11 +12,6 @@ export const getCategory = createAsyncThunk(
       category_id,
     });
 
-    console.log(
-      "response.data.data.products[0].setCategoryName",
-      response.data.data.products[0].categoryName
-    );
-
     thunkAPI.dispatch(
       setCategoryName(response.data.data.products[0].categoryName)
     );

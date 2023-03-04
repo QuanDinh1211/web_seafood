@@ -1,54 +1,84 @@
 @import './mixin.scss';
 
 .footer-container {
-    padding-top: 2rem;
     width: 100%;
     height: 12rem;
     @include boxCenter();
     background-color: #e3e3e3;
     .footer-wrapper {
-        width: 60%;
+        width: 80%;
         height: 100%;
         display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: center;
         .footer-first {
-            width: 100%;
-            height: 50%;
+            width: 30%;
+            height: 100%;
             @include boxCenter();
             .footer-first-logo {
                  
                 @include boxCenter();
                 img { 
-                    width: 5rem;
-                    height: 5rem;
+                    width: 12rem;
+                    height: 8rem;
                 } 
             }
         }
 
         .footer-last {
-            width: 100%;
-            height: 50%;
+            width: 60%;
+            height: 100%;
             display: flex;
-            align-items: center;
+            flex-direction: column;;
             justify-content: space-around;
+            padding: 2rem 0;
+
+            .footer-last-name-cty {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                span {
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: #f1b605;
+                }
+            }
 
             .footer-last-item {
-                width: 50%;
-                height: 100%;
-                @include boxCenter();
+                width: 100%;
+                display: flex;
+                align-items: center;
                 span {
                     color: 000;
                 }
 
                 .footer-last-item-title {
                     padding-right: 0.4rem;
+                    font-weight: 500;
                 }
 
-                .footer-last-item-title {
-
-                }
+                
             }
         }
+    }
+
+    @include responsive(phone) {
+        .footer-wrapper {
+            width: 90%;
+
+            .footer-first {
+                .footer-first-logo {
+                    img {
+                        width: 10rem;
+                        height: 7rem;
+                    }
+                }
+            }
+
+            .footer-last {
+                width: 70%;
+            }
+        }
+        
     }
 }

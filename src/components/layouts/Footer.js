@@ -19,15 +19,22 @@ const Footer = () => {
           </Link>
         </div>
         <div className="footer-last">
+          <div className="footer-last-name-cty">
+            <span>GapFood</span>
+          </div>
           <div className="footer-last-item">
-            <span className="footer-last-item-title">Email:</span>
+            <span className="footer-last-item-title">Website:</span>
+            <span className="footer-last-item-text">Gapfood.com.vn</span>
+          </div>
+          <div className="footer-last-item">
+            <span className="footer-last-item-title">Địa chỉ văn phòng:</span>
             <span className="footer-last-item-text">
-              emailexample@gmail.com
+              Quận Tân Bình, TP. Hồ Chí Minh
             </span>
           </div>
           <div className="footer-last-item">
-            <span className="footer-last-item-title">Liên hệ:</span>
-            <span className="footer-last-item-text">064836789</span>
+            <span className="footer-last-item-title">Hotline:</span>
+            <span className="footer-last-item-text">05454-example-323</span>
           </div>
         </div>
       </div>

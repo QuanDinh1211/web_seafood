@@ -14,6 +14,8 @@ export const categorySlice = createSlice({
     setCategory: (state, action) => {
       if (action.payload) {
         state.products = action.payload;
+      } else {
+        state.products = [];
       }
     },
     setCategoryName: (state, action) => {
@@ -23,11 +25,17 @@ export const categorySlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getCategory.fulfilled, (state, action) => {
-      if (action.payload) {
-        state.products = action.payload;
-      }
-    });
+    builder
+      .addCase(getCategory.fulfilled, (state, action) => {
+        if (action.payload) {
+          state.products = action.payload;
+        } else {
+          state.products = [];
+        }
+      })
+      .addCase(getCategory.rejected, (state, action) => {
+        state.products = [];
+      });
   },
 });
 

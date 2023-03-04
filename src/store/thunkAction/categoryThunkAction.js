@@ -16,6 +16,7 @@ export const getCategory = createAsyncThunk(
       setCategoryName(response.data.data.products[0].categoryName)
     );
 
+    console.log("getdata");
     return response.data.data.products;
   }
 );

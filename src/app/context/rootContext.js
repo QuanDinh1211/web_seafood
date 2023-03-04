@@ -4,7 +4,7 @@ import axios from "axios";
 import { RootContext } from "../hooks/rootContext";
 import { apiurl } from "../../store/consts/rootConst";
 
-import { setProductCart } from "../../store/slice/cartSlide";
+import { setProductCart, deleteProductcart } from "../../store/slice/cartSlide";
 
 const RootContentProvider = ({ children }) => {
   const [showNavigateTablet, setshowNavigateTablet] = useState(false);
@@ -19,6 +19,10 @@ const RootContentProvider = ({ children }) => {
 
   const handleAddToCart = (dispatch, data) => {
     dispatch(setProductCart(data));
+  };
+
+  const handleDeleteCart = (dispatch, id) => {
+    dispatch(deleteProductcart(id));
   };
 
   const handleBuyCart = async (price) => {
@@ -42,6 +46,7 @@ const RootContentProvider = ({ children }) => {
     handleOpenNavigateTablet,
     handleCloseNavigateTablet,
     handleAddToCart,
+    handleDeleteCart,
     handleBuyCart,
   };
 

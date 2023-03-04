@@ -6,6 +6,7 @@ import "../../assets/styles/homeStyle.scss";
 import Category from "../../components/category";
 import ProductAds from "../../components/ProductAds";
 import ProductContent from "../../components/productContent";
+import NotFoundProduct from "../../components/layouts/NotFoundProduct";
 
 import { getCategory } from "../../store/thunkAction/categoryThunkAction";
 import {
@@ -18,6 +19,7 @@ const CategoryPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("cateid", categoryId);
     dispatch(getCategory(categoryId));
   }, [categoryId]);
 
@@ -27,12 +29,18 @@ const CategoryPage = () => {
   return (
     <div className="home-container">
       <div className="home-content-wrapper">
-        <ProductAds />
-        {dataProductCategory && category && (
-          <Category
-            categoryname={category}
-            dataProductcategory={dataProductCategory}
-          />
+        {dataProductCategory.length > 0 ? (
+          <>
+            <ProductAds />
+            {dataProductCategory && category && (
+              <Category
+                categoryname={category}
+                dataProductcategory={dataProductCategory}
+              />
+            )}
+          </>
+        ) : (
+          <NotFoundProduct />
         )}
       </div>
     </div>

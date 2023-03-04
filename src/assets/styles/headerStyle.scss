@@ -30,13 +30,14 @@
                     height: 50%;
                     @include boxCenter();
                     i {
-                        font-size: 1.8rem;
+                        font-size: 2.2rem;
                         color: #000;
                     }
                 }
 
                 .header-content-box-menu-text { 
                     span {
+                        font-size: 1.8rem;
                         color: #000;
                     }
                 }
@@ -234,6 +235,10 @@
         
     }
 
+    .header-content-contact-tablet {
+        display: none;
+    }
+
     @include responsive(tablet-min) {
         .header-wrapper {
             height: 6rem;
@@ -242,10 +247,39 @@
                     display: flex;
                 }
                 .header-content-box-logo {
-                    display: none;
+                    width: 4rem;
+                    height: 3rem;
                 }
                 .header-content-box-user {
                     display: none;
+                }
+            }
+        }
+        .header-content-contact-tablet {
+            @include boxCenter();
+            width: 100%;
+            height: 5rem;
+            background-color: #fff8a5;
+
+            .header-contact-item {
+                @include boxCenter();
+                .header-contact-icon {
+                    width: 4rem;
+                    display: flex;
+                    align-items: center;
+                    i {
+                        font-size: 1.8rem;
+                        color: #009fd1;
+                    }
+                }
+
+                .header-contact-text {
+                    display: flex;
+                    align-items: center;
+                    span {
+                        font-size: 1.6rem;
+                        color: #ff7200;
+                    }
                 }
             }
         }
@@ -259,7 +293,8 @@
                     display: flex;
                 }
                 .header-content-box-logo {
-                    display: none;
+                    width: 5rem;
+                    height: 3.2rem;
                 }
                 .header-content-box-user {
                     display: none;
@@ -273,10 +308,42 @@
                 }
 
                 .header-content-box-cart {
-                    width: 3.4rem;
-                    height: 3.4rem; 
+                    width: 4rem;
+                    height: 4rem; 
                     border: 1.4px solid #000;
 
+                    i {
+                        font-size: 1.8rem;
+                    }
+
+                }
+            }
+        }
+        .header-content-contact-tablet {
+            @include boxCenter();
+            width: 100%;
+            height: 6rem;
+            background-color: #fff8a5;
+
+            .header-contact-item {
+                @include boxCenter();
+                .header-contact-icon {
+                    width: 4rem;
+                    display: flex;
+                    align-items: center;
+                    i {
+                        font-size: 2rem;
+                        color: #009fd1;
+                    }
+                }
+
+                .header-contact-text {
+                    display: flex;
+                    align-items: center;
+                    span {
+                        font-size: 1.8rem;
+                        color: #ff7200;
+                    }
                 }
             }
         }

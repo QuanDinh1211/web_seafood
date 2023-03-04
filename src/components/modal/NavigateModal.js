@@ -41,9 +41,13 @@ const NavigateModal = () => {
         }
       >
         <div className="navigate-modal-wrapper">
-          <div className="navigate-modal-user logo">
-            {shop && <img src={shop && `${imgurl}/${shop.path}`} alt="logo" />}
-          </div>
+          {false && (
+            <div className="navigate-modal-user logo">
+              {shop && (
+                <img src={shop && `${imgurl}/${shop.path}`} alt="logo" />
+              )}
+            </div>
+          )}
           {false && (
             <div className="navigate-modal-user">
               <div className="navigate-modal-user-icon">
@@ -61,7 +65,7 @@ const NavigateModal = () => {
           <div className="navigate-modal-hotline">
             <div className="navigate-modal-hotline-icon">
               <div className="navigate-modal-hotline-icon-item">
-                <i className="fas fa-phone"></i>
+                <i className="fas fa-comment-dots"></i>
               </div>
             </div>
             <div className="navigate-modal-hotline-name">

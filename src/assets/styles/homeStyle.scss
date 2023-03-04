@@ -17,14 +17,14 @@
 
     }
     @include responsive(tablet-min) {
-        padding-top: 6.2rem;
+        padding-top: 11.2rem;
         .home-content-wrapper {
             width: 90%;
         }
     }
 
     @include responsive(phone) {
-        padding-top: 8.2rem;
+        padding-top: 14.2rem;
         .home-content-wrapper {
             width: 96%;
         }

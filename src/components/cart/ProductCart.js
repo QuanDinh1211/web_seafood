@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import { imgurldefault } from "../../store/consts/rootConst";
+
+import { RootContext } from "../../app/hooks/rootContext";
 
 import {
   editProductcart,
@@ -9,6 +11,7 @@ import {
 
 const ProductCart = ({ product }) => {
   const dispatch = useDispatch();
+  const { handleDeleteCart } = useContext(RootContext);
 
   const handleClickMiniBtn = () => {
     if (product.quantity > 1) {
@@ -30,7 +33,7 @@ const ProductCart = ({ product }) => {
   };
 
   const handleClickDeleteBtn = () => {
-    dispatch(deleteProductcart(product.id));
+    handleDeleteCart(dispatch, product.id);
   };
 
   return (

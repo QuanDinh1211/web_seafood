@@ -8,6 +8,11 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    setListProductCart: (state, action) => {
+      if (action.payload) {
+        state.products = action.payload;
+      }
+    },
     setProductCart: (state, action) => {
       if (action.payload) {
         state.products.push(action.payload);
@@ -35,5 +40,9 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { setProductCart, editProductcart, deleteProductcart } =
-  cartSlice.actions;
+export const {
+  setProductCart,
+  editProductcart,
+  setListProductCart,
+  deleteProductcart,
+} = cartSlice.actions;

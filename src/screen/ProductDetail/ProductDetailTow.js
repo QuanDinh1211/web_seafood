@@ -8,12 +8,13 @@ import { getProduct } from "../../store/thunkAction/productThunkAction";
 import { selectProduct } from "../../store/selectors/productSelector";
 import { imgurldefault } from "../../store/consts/rootConst";
 import { RootContext } from "../../app/hooks/rootContext";
+import { selectProductCart } from "../../store/selectors/cartSelector";
 
 const ProductDetailTow = () => {
   const { productid } = useParams();
   const dispatch = useDispatch();
 
-  const { handleAddToCart } = useContext(RootContext);
+  const { handleAddToCart, handleDeleteCart } = useContext(RootContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,6 +24,7 @@ const ProductDetailTow = () => {
   }, []);
 
   const product = useSelector(selectProduct);
+  const dataProductCart = useSelector(selectProductCart);
 
   const [productState, setproductState] = useState({
     img_active: null,
@@ -51,6 +53,14 @@ const ProductDetailTow = () => {
   const handlickAddCartBtn = () => {
     handleAddToCart(dispatch, { product: product, quantity: volumeProduc });
   };
+
+  const handleOnClickDeleteOutCart = () => {
+    handleDeleteCart(dispatch, product.id);
+  };
+
+  const checkAddToCart = dataProductCart.some((productCart) => {
+    return productCart.id === product.id;
+  });
 
   return (
     <div className="productDetailTow-container">
@@ -173,12 +183,21 @@ const ProductDetailTow = () => {
                 </div>
               </div>
               <div className="productDetailTow-content-order-add-toCart">
-                <div
-                  className="productDetailTow-content-order-btn-addcart"
-                  onClick={handlickAddCartBtn}
-                >
-                  <span>Đặt vào giỏ</span>
-                </div>
+                {checkAddToCart ? (
+                  <div
+                    className="productDetailTow-content-order-btn-addcart delete-out-cart"
+                    onClick={handleOnClickDeleteOutCart}
+                  >
+                    <span>Lấy khỏi giỏ</span>
+                  </div>
+                ) : (
+                  <div
+                    className="productDetailTow-content-order-btn-addcart"
+                    onClick={handlickAddCartBtn}
+                  >
+                    <span>Đặt vào giỏ</span>
+                  </div>
+                )}
               </div>
             </div>
             <div className="productDetailTow-content-footer">

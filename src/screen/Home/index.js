@@ -6,6 +6,7 @@ import Category from "../../components/category";
 import ProductAds from "../../components/ProductAds";
 import ProductContent from "../../components/productContent";
 import Topic from "../../components/Topic";
+import NavigateCategoryMobile from "../../components/layouts/NavigateCategoryMobile";
 
 import { getProductsCategory } from "../../store/thunkAction/homeThunkAction";
 import {
@@ -30,6 +31,7 @@ const Home = () => {
     <div className="home-container">
       <div className="home-content-wrapper">
         <ProductAds />
+        <NavigateCategoryMobile />
         <Topic />
         {listProductsCategoryData.map((category_product, index) => {
           return (

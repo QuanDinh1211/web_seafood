@@ -1,6 +1,8 @@
 import { fofmat } from "../../utils/formatVND";
 import { createSelector } from "@reduxjs/toolkit";
 
+export const cartStateSlector = (state) => state.cart;
+
 export const selectProductCart = (state) => {
   const dataProductCart = state.cart.products.map((productItem) => {
     const { product, quantity } = productItem;

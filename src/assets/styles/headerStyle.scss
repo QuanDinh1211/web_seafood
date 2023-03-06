@@ -24,6 +24,8 @@
                 flex-direction: column;
                 cursor: pointer;
                 display: none;
+                position: absolute;
+                bottom: 3px;
 
                 .header-content-box-menu-icon {
                     width: 100%;
@@ -37,7 +39,7 @@
 
                 .header-content-box-menu-text { 
                     span {
-                        font-size: 1.8rem;
+                        font-size: 1rem;
                         color: #000;
                     }
                 }
@@ -247,9 +249,19 @@
                     display: flex;
                 }
                 .header-content-box-logo {
-                    width: 4rem;
-                    height: 3rem;
+                    width: 5rem;
+                    height: 4rem;
                 }
+
+                .header-content-box-search {
+                    width: 46%;
+                    .header-content-box-search-input {
+                        input {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                 
                 .header-content-box-user {
                     display: none;
                 }
@@ -291,19 +303,27 @@
             .header-content-box {
                 .header-content-box-menu {
                     display: flex;
+                    bottom: 6px;
+                    margin: 0 3rem;
                 }
                 .header-content-box-logo {
-                    width: 5rem;
-                    height: 3.2rem;
+                    width: 6rem;
+                    height: 4rem;
+                    margin: 0 2rem;
                 }
                 .header-content-box-user {
                     display: none;
                 }
 
                 .header-content-box-search {
-                    width: 50%;
+                    width: 60%;
                     background-color: #fff;
                     padding: 1.4px;
+                    .header-content-box-search-input {
+                        input {
+                            font-size: 1.6rem;
+                        }
+                    }
                     
                 }
 
@@ -311,6 +331,7 @@
                     width: 4rem;
                     height: 4rem; 
                     border: 1.4px solid #000;
+                    margin: 0 2rem;
 
                     i {
                         font-size: 1.8rem;

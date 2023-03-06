@@ -39,16 +39,14 @@ const Header = () => {
               </Link>
             )}
           </div>
-          {false && (
-            <div className="header-content-box-search">
-              <div className="header-content-box-search-input">
-                <input type="text" placeholder="Nhập để tìm kiếm sản phẩm" />
-              </div>
-              <div className="header-content-box-search-icon">
-                <i className="fas fa-search"></i>
-              </div>
+          <div className="header-content-box-search">
+            <div className="header-content-box-search-input">
+              <input type="text" placeholder="Nhập để tìm kiếm sản phẩm" />
             </div>
-          )}
+            <div className="header-content-box-search-icon">
+              <i className="fas fa-search"></i>
+            </div>
+          </div>
           {false && (
             <div className="header-content-box-user">
               <div className="header-content-box-user-icon">

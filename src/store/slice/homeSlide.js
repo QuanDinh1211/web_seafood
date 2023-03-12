@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getHome, getProductsCategory } from "../thunkAction/homeThunkAction";
 
 const initialState = {
+  isLoading: false,
   shop: null,
   listCategory: [],
   topic: [],
@@ -32,7 +33,11 @@ export const homeSlice = createSlice({
         state.listCategory = Object.values(action.payload.category);
         state.topic = action.payload.product;
       })
+      .addCase(getProductsCategory.pending, (state) => {
+        state.isLoading = true;
+      })
       .addCase(getProductsCategory.fulfilled, (state, action) => {
+        state.isLoading = false;
         if (
           !state.listProductsCategory.some((product_category) => {
             return product_category.category.id === action.payload.category.id;

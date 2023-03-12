@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getCategory } from "../thunkAction/categoryThunkAction";
 
 const initialState = {
+  isLoading: false,
   category: "",
   products: [],
 };
@@ -26,7 +27,11 @@ export const categorySlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(getCategory.pending, (state) => {
+        state.isLoading = true;
+      })
       .addCase(getCategory.fulfilled, (state, action) => {
+        state.isLoading = false;
         if (action.payload) {
           state.products = action.payload;
         } else {

@@ -92,10 +92,45 @@
     }
 
     @include responsive(tablet-min) {
-        padding-top: 12.6rem;
+        padding-top: 8.6rem;
         min-height: 90vh;
         .introduction-wrapper {
             width: 100%;
+
+            .introduction-content {
+                h2 {
+                    font-size: 2.4rem;
+                }
+
+                .introduction-des {
+                    p {
+                        line-height: 2.2rem;
+                        font-size: 1.6rem;
+                    }
+                }
+                .introduction-content-contact {
+                    .introduction-content-contact-title {
+                        margin-bottom: 0.4rem;
+                        span {
+                            font-size: 2rem;
+                        }
+
+                       
+                    }
+
+                    .introduction-content-contact-item {
+                        margin: 0.4rem 0;
+                        span {
+                            font-size: 1.8rem;
+                        }
+
+                        a {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+
 
             .introduction-img {
                 img {
@@ -106,6 +141,43 @@
     }
 
     @include responsive(phone) {
-        padding-top: 16rem;
+        padding-top: 10rem;
+
+        .introduction-wrapper {
+            width: 100%;
+            .introduction-content {
+                h2 {
+                    font-size: 2.4rem;
+                }
+
+                .introduction-des {
+                    p {
+                        line-height: 2.8rem;
+                        font-size: 1.8rem;
+                    }
+                }
+                .introduction-content-contact {
+                    .introduction-content-contact-title {
+                        margin-bottom: 0.4rem;
+                        span {
+                            font-size: 1.8rem;
+                        }
+
+                       
+                    }
+
+                    .introduction-content-contact-item {
+                        margin: 0.4rem 0;
+                        span {
+                            font-size: 1.8rem;
+                        }
+
+                        a {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

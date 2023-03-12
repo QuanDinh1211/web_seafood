@@ -160,6 +160,14 @@
         width: 23.6%;
         height: 20rem;
 
+        .category-item-price-sale {
+            span {
+                padding: 0.2rem;
+                margin-left: 0.4rem;
+                font-size: 1.4rem;
+            }
+        }
+
         .category-item-btn-addCart {
             display: flex !important;
         }
@@ -227,7 +235,13 @@
         width: 47%;
         height: 30rem;
         
-
+        .category-item-price-sale {
+            span {
+                padding: 0.2rem;
+                margin-left: 0.4rem;
+                font-size: 1.8rem;
+            }
+        }
        
 
         .category-item-last {

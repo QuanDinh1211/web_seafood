@@ -686,6 +686,21 @@
                                 }
                             }
                         }
+                        .productDetailTow-content-order-price {
+                            .productDetailTow-content-order-list-price {
+                                .productDetailTow-content-order-price-root {
+                                    span {
+                                        font-size: 1.4rem;
+                                    }
+                                }
+
+                                .productDetailTow-content-order-price-sale {
+                                    span {
+                                        padding: 0.2rem;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -29,15 +29,15 @@ export const homeSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getHome.fulfilled, (state, action) => {
+        state.isLoading = false;
         state.shop = action.payload.shop;
         state.listCategory = Object.values(action.payload.category);
         state.topic = action.payload.product;
       })
-      .addCase(getProductsCategory.pending, (state) => {
+      .addCase(getHome.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getProductsCategory.fulfilled, (state, action) => {
-        state.isLoading = false;
         if (
           !state.listProductsCategory.some((product_category) => {
             return product_category.category.id === action.payload.category.id;

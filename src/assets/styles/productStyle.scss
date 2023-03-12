@@ -8,6 +8,23 @@
     padding: 0.6rem;
     overflow: hidden;
     margin: 4px;
+    position: relative;
+
+    .category-item-price-sale {
+        position: absolute;
+        top: 0.8rem;
+        left: 0.4rem;
+        z-index: 50;
+        span {
+            padding: 0.1rem;
+            border: 1px solid #ff424e;
+            border-radius: 2px;
+            background-color: #fff0f1;
+            color: #ff424e;
+            line-height: 18px;
+            margin-left: 0.4rem;
+        }
+    }
 
     .category-item-first {
         width: 100%;
@@ -67,6 +84,15 @@
                 color: #34bf00;
                 font-weight: 700;
             }
+
+            .category-item-price-root {
+                font-size: 0.8rem;
+                margin-left: 0.8rem;
+                color: #808089;
+                text-decoration: line-through;
+            }
+
+            
         }
 
         .category-item-last-volum {

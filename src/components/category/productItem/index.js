@@ -40,6 +40,9 @@ const ProductItem = ({ data, isSlide }) => {
       className="category-item relative"
       onClick={handleOnclickProductItem}
     >
+      <div className="category-item-price-sale">
+        <span>0%</span>
+      </div>
       <div className="category-item-first">
         <div className="category-item-img">
           <img src={`${imgurldefault}/${productImage[0].path}`} alt="img" />
@@ -54,6 +57,7 @@ const ProductItem = ({ data, isSlide }) => {
         </div>
         <div className="category-item-last-price">
           <span>{priceShow}</span>
+          <span className="category-item-price-root">{priceShow}</span>
         </div>
         <div className="category-item-last-volum">
           {/* <span>{weight}</span> */}

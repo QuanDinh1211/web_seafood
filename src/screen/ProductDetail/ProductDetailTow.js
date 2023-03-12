@@ -143,17 +143,12 @@ const ProductDetailTow = () => {
                     <div className="productDetailTow-content-order-price-active">
                       <span>{product.priceShow}</span>
                     </div>
-
-                    {false && (
-                      <>
-                        <div className="productDetailTow-content-order-price-root">
-                          <span></span>
-                        </div>
-                        <div className="productDetailTow-content-order-price-sale">
-                          <span></span>
-                        </div>
-                      </>
-                    )}
+                    <div className="productDetailTow-content-order-price-root">
+                      <span>{product.priceShow}</span>
+                    </div>
+                    <div className="productDetailTow-content-order-price-sale">
+                      <span>0%</span>
+                    </div>
                   </div>
                 </div>
                 <div className="productDetailTow-content-order-unit">

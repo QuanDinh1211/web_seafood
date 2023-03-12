@@ -41,7 +41,7 @@ const Header = () => {
           </div>
           <div className="header-content-box-search">
             <div className="header-content-box-search-input">
-              <input type="text" placeholder="Nhập để tìm kiếm sản phẩm" />
+              <input type="text" placeholder="Tìm kiếm sản phẩm" />
             </div>
             <div className="header-content-box-search-icon">
               <i className="fas fa-search"></i>
@@ -77,16 +77,18 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <div className="header-content-contact-tablet">
-        <Link to="/introduction" className="header-contact-item">
-          <div className="header-contact-icon">
-            <i className="fas fa-phone"></i>
-          </div>
-          <div className="header-contact-text">
-            <span>Liên hệ với chúng tôi</span>
-          </div>
-        </Link>
-      </div>
+      {false && (
+        <div className="header-content-contact-tablet">
+          <Link to="/introduction" className="header-contact-item">
+            <div className="header-contact-icon">
+              <i className="fas fa-phone"></i>
+            </div>
+            <div className="header-contact-text">
+              <span>Liên hệ với chúng tôi</span>
+            </div>
+          </Link>
+        </div>
+      )}
       <CategoryHeader />
     </div>
   );

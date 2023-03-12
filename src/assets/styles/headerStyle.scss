@@ -17,15 +17,15 @@
             justify-content: space-between;
 
             .header-content-box-menu {
-                margin: 0 4rem;
+                margin-left: 4rem;
                 width: 4rem;
                 height: 4rem;
                 @include boxCenter();
                 flex-direction: column;
                 cursor: pointer;
                 display: none;
-                position: absolute;
-                bottom: 3px;
+                // position: absolute;
+                // bottom: 3px;
 
                 .header-content-box-menu-icon {
                     width: 100%;
@@ -304,10 +304,11 @@
                 .header-content-box-menu {
                     display: flex;
                     bottom: 6px;
-                    margin: 0 3rem;
+                    margin: 0;
+                    margin-left: 2rem;
                 }
                 .header-content-box-logo {
-                    width: 6rem;
+                    width: 5rem;
                     height: 4rem;
                     margin: 0 2rem;
                 }
@@ -316,7 +317,7 @@
                 }
 
                 .header-content-box-search {
-                    width: 60%;
+                    width: 50%;
                     background-color: #fff;
                     padding: 1.4px;
                     .header-content-box-search-input {

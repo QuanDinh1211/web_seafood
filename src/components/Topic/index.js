@@ -9,7 +9,10 @@ const Topic = () => {
   const dataTopicRender = useSelector(topicSelector);
 
   return (
-    <Category categoryname={"Topic"} dataProductcategory={dataTopicRender} />
+    <Category
+      categoryname={"Hải sản đông lạnh / gia vị"}
+      dataProductcategory={dataTopicRender}
+    />
   );
 };
 

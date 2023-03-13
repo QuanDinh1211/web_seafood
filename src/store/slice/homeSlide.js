@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getHome, getProductsCategory } from "../thunkAction/homeThunkAction";
 
 const initialState = {
+  lang: "vi",
   isLoading: false,
   shop: null,
   listCategory: [],
@@ -24,6 +25,9 @@ export const homeSlice = createSlice({
       state.product = state.products.find((product) => {
         return Number(product.id) === Number(action.payload);
       });
+    },
+    setLang: (state, action) => {
+      state.lang = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -52,4 +56,4 @@ export const homeSlice = createSlice({
   },
 });
 
-export const { setProduct, setProductCategory } = homeSlice.actions;
+export const { setProduct, setProductCategory, setLang } = homeSlice.actions;

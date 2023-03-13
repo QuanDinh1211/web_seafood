@@ -173,6 +173,15 @@
         border-top: 1px solid #009fd1;
         border-bottom: none;
     }
+
+    &.lang {
+        border-top: 1px solid #009fd1;
+        border-bottom: none;
+        width: 100%;
+        padding: 0 2rem;
+        height: 6rem;
+        @include boxCenter();
+    }
 }
 
 @keyframes openNavigation {

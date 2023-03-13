@@ -6,6 +6,7 @@ import "../../assets/styles/navigateModalStyle.scss";
 
 import ModalContainer from "./ModalContainer";
 import ListCategoryNavigate from "../layouts/ListCategoryNavigate";
+import Lang from "../../components/lang";
 
 import { RootContext } from "../../app/hooks/rootContext";
 import { selectShop } from "../../store/selectors/homeSelector";
@@ -104,6 +105,9 @@ const NavigateModal = () => {
                   Liên hệ cửa hàng
                 </span>
               </div>
+            </div>
+            <div className="navigate-moda-backHome lang">
+              <Lang />
             </div>
           </div>
         </div>

@@ -4,16 +4,19 @@
     width: 100%;
     position: fixed;
     z-index: 1000;
-
+    @include boxCenter();
+    flex-direction: column;
+    background-color: #fff688;
     .header-wrapper {
         width: 100%;
         height: 5.4rem;
+        @include boxCenter();
+
         .header-content-box {
-            width: 100%;
+            width: 96%;
             height: 100%;
             display: flex;
             align-items: center;
-            background-color: #fff688;
             justify-content: space-between;
 
             .header-content-box-menu {
@@ -46,7 +49,7 @@
             }
 
             .header-content-box-logo {
-                margin: 0 4rem;
+                margin: 0 3rem;
                 width: 4rem;
                 height: 3rem;
                 a {
@@ -206,7 +209,7 @@
                 border-radius: 50%;
                 @include boxCenter();
                 position: relative;
-                margin: 0 4rem;
+                margin: 0 3rem;
                 border: 2px solid #000;
                 cursor: pointer;
                 text-decoration: none;
@@ -232,8 +235,16 @@
                     border-radius: 6px;
                 }
             }
-        }
 
+            
+        }
+        .header-content-box-lang-conten {
+            width: 10rem;
+            height: 4rem;
+            margin-right: 1rem;
+
+               
+        }
         
     }
 
@@ -339,6 +350,10 @@
                     }
 
                 }
+            }
+
+            .header-content-box-lang-conten {
+                display: none;
             }
         }
         .header-content-contact-tablet {

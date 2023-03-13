@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 import "../../assets/styles/headerStyle.scss";
 import CategoryHeader from "./CategoryHeader";
+import Lang from "../lang";
 
 import { RootContext } from "../../app/hooks/rootContext";
 import { selectShop } from "../../store/selectors/homeSelector";
@@ -75,6 +76,10 @@ const Header = () => {
             <i className="fas fa-shopping-cart "></i>
             <span>{dataProduct.length}</span>
           </Link>
+        </div>
+
+        <div className="header-content-box-lang-conten">
+          <Lang />
         </div>
       </div>
       {false && (

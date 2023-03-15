@@ -31,6 +31,15 @@ const ProductDetailTow = () => {
     volumeProduc: 1,
   });
 
+  useEffect(() => {
+    if(product) {
+      setproductState({
+        ...productState,
+        img_active: product.productImage[0].path,
+      });
+    }
+  }, [product])
+
   const handleClickListImg = (event) => {
     setproductState({
       ...productState,

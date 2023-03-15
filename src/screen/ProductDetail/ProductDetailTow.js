@@ -89,10 +89,11 @@ const ProductDetailTow = () => {
                     Object.values(product.productImage).map((img, index) => {
                       return (
                         <div
-                          className="productDetailTow-content-header-last-item active"
+                          className={img_active === img.path ? 'productDetailTow-content-header-last-item active' : 'productDetailTow-content-header-last-item'} 
                           key={index}
                           name={img.path}
                           onClick={handleClickListImg}
+                          
                         >
                           <img
                             src={`${imgurldefault}/${img.path}`}

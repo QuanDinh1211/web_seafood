@@ -36,7 +36,7 @@ const ProductItem = ({ data, isSlide }) => {
 
   return (
     <Link
-      to={link}
+      to={`/${link}`}
       className="category-item relative"
       onClick={handleOnclickProductItem}
     >
